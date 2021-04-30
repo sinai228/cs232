@@ -1,0 +1,30 @@
+Sinai Park (sp46)
+CS 232_homework01
+February 14, 2021
+
+How many bytes of RAM does the virtual machine have by default? 
+This virtual memory has a total memory of 1024 by default.
+
+What are the registers that the virtual machine has? 
+The registers that the VM has are reg0, reg1, reg2, and the pc.
+
+What arguments does the instruction JLZ take and what does the instruction do? 
+The JLZ instruction takes in the source register and the destination register as arguments, and checks if it is less than 0, in order to jump.
+
+When does the CPU check if an interrupt has occurred?
+The CPU checks if an interrupt has occurred once the program is running and after it has printed the CPU state.
+
+What does the Monitor instruction S do?
+The Monitor instruction S shows memory from start to end. 
+
+What does the Monitor instruction ! do? 
+The Monitor instruction ! has the default as off, and it toggles the debugging on or off.
+
+Can assembly language files contain comments? How about blank lines?
+Yes, assembly language file can contain comments starting with ';' and the blank lines are also possible with just <Enter>. 
+
+What function is called to write bytes into memory? 
+The _poke_ram() is called to order the bytes to write into memory.
+
+Do assembly language programs assume they are loaded into memory at certain locations?
+Yes.

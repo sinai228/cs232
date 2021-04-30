@@ -1,0 +1,26 @@
+"""
+author: Sinai Park (sp46)
+Date: March 11, 2021
+For CS232, 2021
+"""
+
+Where is the PCB class defined?
+    The PCB class is defined inside the calos.py
+What information does a PCB object contain?
+    A PCB object contains the information of the entry point, the memory, registers, PID, name, as well as the statees.
+When is a PCB created? Which line in which file creates a PCB?
+    The PCB is created when pcb = calos.PCB(procname) is called, in main.py of line 180, and line 177 has the name pcb set to None.
+What process states have been defined?
+    The states NEW, READY, RUNNING, WAITING, and DONE have all been defined.
+Regarding the variable current_proc: Where has it been defined and what is its significance?
+    It's been defined as NONE in the beginning of calos.py in line 12, and it's significant because it refers to the current process's pcb which is useful to do context switching with.
+In the TimerController class, what does code that reads
+ 	with self._mutex:
+ 	    code here... 		
+do? I.e., what does with mean in python and why does the code use it? 
+    The code reading with self._mutex locks to protect the setting/getting the countdown.
+    In python, with is used in exception handling to make code more readable and cleaner, instead of using try/finally statements. 
+In the TimerController class, explain what the code does when the countdown goes to 0 (i.e., the time expires).
+    When the timer device controlled by this class inside devices.py reaches 0, it sends an interrupt to the CPU that is running. 
+    When the timer reaches 0, the lock is set to acquire, which means only one thread can access the critical part, and then the device bus address is added to the one that had raised an interrupt. Next, we verify 
+    that the interrupt has been raised and then the cpu releases the lock, and then we set the countdown value to -1 to indicate that the timer is not running. 
